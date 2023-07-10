@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coca Cola </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/469fbaf61b.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+        integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h3 class="title">Coca cola</h3>
+        <ul>
+            <li><h3>originals</h3></li>
+            <li><h3>zero</h3></li>
+        </ul>
+        <i class="fa-solid fa-bars"></i>
+    </nav>
+
+    <div class="container">
+        <h1>Start from</h1>
+        <div class="red-line">
+            <p>Coke</p>
+        </div>
+        <h3>All rights reserved coca cola based in georgia.</h3>
+        <img src="img/coke-one.png" alt="">
+    </div>
+
+    <div class="social">
+        <ul><i class="fa-brands fa-facebook"></i></ul>
+        <ul><i class="fa-brands fa-instagram"></i></ul>
+        <ul><i class="fa-brands fa-twitter"></i></ul>
+        <ul><i class="fa-brands fa-youtube"></i></ul>
+    </div>
+
+    <div class="images">
+        <img onclick="setBlack()" src="img/coke-two.png" alt="">
+        <img onclick="setRed()" src="img/coke-one.png" alt="">
+    </div>
+
+    <script>
+        TweenMax.from('.navbar h3.title',1,{
+            opacity: 0,
+            delay: 0,
+            y: 10,
+            ease: Expo.easeInOut,
+        })
+        TweenMax.staggerFrom('.navbar ul li', 1, {
+            opacity: 0,
+            delay: 0.2,
+            y: 10,
+            ease: Expo.easeInOut,
+        }, 0.2)
+        TweenMax.from('.navbar i',1,{
+            opacity: 0,
+            delay: 0.4,
+            y: 10,
+            ease: Expo.easeInOut,
+        })
+        TweenMax.to('.container .red-line', 2.5, {
+            width: "100%",
+            delay: 0,
+            ease: Expo.easeInOut,
+        })
+        TweenMax.from('.container .red-line p', 1, {
+            opacity: 0,
+            y: 40,
+            delay: 2.2,
+            ease: Expo.easeInOut,
+        })
+        TweenMax.from('.container img', 2, {
+            opacity: 0,
+            x: -400,
+            delay: 2,
+            ease: Expo.easeInOut
+        })
+        TweenMax.from('.container h1', 1.5, {
+            opacity: 0,
+            y: 20,
+            delay: 3,
+            ease: Expo.easeInOut
+        })
+        TweenMax.from('.container h3', 1.5, {
+            opacity: 0,
+            y: -20,
+            delay: 3.5,
+            ease: Expo.easeInOut
+        })
+        TweenMax.staggerFrom('.social ul i', 1, {
+            opacity: 0,
+            y: 10,
+            delay: 4,
+            ease: Expo.easeInOut,
+        }, 0.2)
+        TweenMax.staggerFrom('.images img', 0.5, {
+            opacity: 0,
+            y: 40,
+            delay: 5,
+            ease: Expo.easeInOut,
+        }, 0.3)
+
+        const image = document.querySelector('.container img');
+        function setBlack(){
+            image.src = "img/coke-two.png";
+        }
+        function setRed(){
+            image.src = "img/coke-one.png";
+        }
+    </script>
+</body>
+
+</html>
